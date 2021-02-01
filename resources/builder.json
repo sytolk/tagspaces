@@ -6,7 +6,6 @@
     "node_modules/",
     "app.html",
     "splash.html",
-    "splash-worker.js",
     "main.prod.js",
     "main.prod.js.map",
     "third-party.txt",
@@ -14,31 +13,30 @@
     "version.json",
     "package.json"
   ],
-  "copyright": "Copyright © 2018 TagSpaces UG (haftungsbeschraenkt)",
+  "copyright": "Copyright © 2021 TagSpaces UG (haftungsbeschraenkt)",
   "artifactName": "${name}-${os}-${arch}-${version}.${ext}",
   "win": {
     "target": [
       "nsis",
-      "portable"
-    ]
+      // "portable",
+      "zip"
+    ],
+    "icon": "resources/icon.ico"
   },
   "mac": {
-    "target": [
-      "zip"
-    ]
+    "target": ["zip", "dmg"],
+    "icon": "resources/icon.icns"
   },
   "linux": {
-    "target": [
-      "deb",
-      "tar.gz",
-      "appImage"
-      // "rpm"
-    ],
-    "category": "Office"
+    "target": ["deb", "tar.gz", "appImage"],
+    "category": "Office",
+    "icon": "resources/icon.icns"
   },
   "nsis": {
-    "oneClick": true,
-    "license": "app/LICENSE.txt"
+    "oneClick": false,
+    "allowToChangeInstallationDirectory": true,
+    "license": "app/LICENSE.txt",
+    "include": "resources/installer.nsh"
   },
   "directories": {
     "buildResources": "resources",

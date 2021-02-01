@@ -1,11 +1,11 @@
 const jsDAV = require('jsDAV/lib/jsdav');
-const jsDAV_Auth_Backend_File = require('jsDAV/lib/DAV/plugins/auth/file');
+const jsDAVAuthBackendFile = require('jsDAV/lib/DAV/plugins/auth/file');
 
-jsDAV.debugMode = true;
+jsDAV.debugMode = false;
 jsDAV.createServer(
   {
-    node: './cordova/www',
-    authBackend: jsDAV_Auth_Backend_File.new('./scripts/jsdavauth'),
+    node: './web',
+    authBackend: jsDAVAuthBackendFile.new('./scripts/jsdavauth'),
     realm: 'jdavtest'
   },
   8000
