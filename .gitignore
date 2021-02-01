@@ -39,9 +39,9 @@ dist
 dll
 main.js
 main.js.map
-package-lock.json
 
 .idea
+*.iml
 npm-debug.log.*
 
 # Cordova files
@@ -52,6 +52,7 @@ cordova/www/*
 cordova/platforms/android/.gradle/*
 cordova/platforms/android/CordovaLib/build/*
 cordova/platforms/android/assets/www/*
+cordova/platforms/android/app/src/main/assets/www/*
 cordova/plugins/**/*
 
 extensions/*
@@ -69,3 +70,36 @@ scripts/enablepro.js
 
 tsprofile
 CHANGELOG.TXT
+CHANGELOG-PRO.TXT
+
+web/dist
+web/files
+web/node_modules
+web/LICENSE.txt
+web/third-party.txt
+web/sw-config.js
+
+app/extconfig*
+web/extconfig*
+cordova/www/extconfig.js
+
+reports/*
+
+coverage/
+tests/*
+!tests/unit/
+!tests/e2e/
+!tests/minioEnv.js
+!tests/webEnv.js
+!tests/global-setup.js
+!tests/global-setup-minio.js
+!tests/global-setup-web.js
+!tests/global-teardown.js
+!tests/global-teardown-minio.js
+!tests/global-teardown-web.js
+!tests/setup-after-env.js
+!tests/setup-functions.js
+
+builds/*
+web/sw-con
+.ycache/*
